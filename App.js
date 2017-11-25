@@ -1,21 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+//Props
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList'
 
-export default class App extends React.Component {
+
+export default class App extends Component {
+
   render() {
+    const {container} = styles;
+
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+      <View style={container}>
+        <Header headerText={'Albums'} />
+        <AlbumList />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    backgroundColor: '#ccc'
+
+  }
+};
