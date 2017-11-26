@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -7,7 +7,7 @@ import Button from './Button';
 // ({album}) instead of props.album
 const AlbumDetail = ({album}) => {
   // Destructure refactor styles.imageCell to {imageCell}
-  const {title, artist, thumbnail_image, image } = album;
+  const {title, artist, thumbnail_image, image, url } = album;
   const {imageCell, imageThumbnail, textCell, textTitle, imageStyle} = styles;
 
   return (
@@ -30,7 +30,9 @@ const AlbumDetail = ({album}) => {
       </CardSection>
 
       <CardSection>
-        <Button />
+        <Button onPress={() => Linking.openURL(url)} >
+          Buy {title} Album
+        </Button>
       </CardSection>
     </Card>
   );
