@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 //Props
 import Header from './src/components/Header';
 import AlbumList from './src/components/AlbumList'
+console.ignoredYellowBox = ['Remote debugger'];
 
 
 export default class App extends Component {
@@ -21,8 +22,7 @@ export default class App extends Component {
 
 const styles = {
   container: {
-    flex: 1,
+    flex: 1, // need for ScrollView .. maybe
     backgroundColor: '#ccc'
-
   }
 };
